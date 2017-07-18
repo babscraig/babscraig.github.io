@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 Concepts you need to understand this:
 - A basic understanding of Javascript
