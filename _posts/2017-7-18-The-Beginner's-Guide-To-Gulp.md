@@ -1,6 +1,3 @@
-The Beginner's Guide To Gulp
-=
-
 One of the first concepts I came in contact with after making the transition from playing with html, css and js files to building actual web applications was the concept of task runners.
 
 Task runners help automate a lot of the repetitive or mundane tasks a developer goes through. They help convert pre-processor files like turning SASS or LESS into CSS. They help bundle smaller multiple files, e.g javascript files, into one main file, they help minify file sizes, auto-refresh the browser and watch our files in order to run any or more of the above listed processes.
