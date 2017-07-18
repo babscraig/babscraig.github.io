@@ -1,5 +1,1 @@
-
-type: CNAME
-host: blog.babscraig.com
-answer: babscraig.github.io
-TTL: 300
+blog.babscraig.com
