@@ -1,3 +1,6 @@
+The Beginner's Guide To Gulp
+=
+
 One of the first concepts I came in contact with after making the transition from playing with html, css and js files to building actual web applications was the concept of task runners.
 
 Task runners help automate a lot of the repetitive or mundane tasks a developer goes through. They help convert pre-processor files like turning SASS or LESS into CSS. They help bundle smaller multiple files, e.g javascript files, into one main file, they help minify file sizes, auto-refresh the browser and watch our files in order to run any or more of the above listed processes.
@@ -47,7 +50,7 @@ $ npm install gulp-sass --save-dev
 Next, create a gulp file, ```gulpfile.js``` in the root of your application. 
 
 Then enter the following code:
-```
+```javascript
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 ```
@@ -55,7 +58,7 @@ This pulls in the modules/packages we installed earlier so we can use them.
 
 The gulp module exposes a .task() method which we use to create tasks. Let's make the first task:
 
-```
+```javascript
 gulp.task('sass', function() {
   gulp.src('scss/main.scss')
     .pipe(sass().on('error', sass.logError))
@@ -68,7 +71,7 @@ So what's going on up there? Well, first we invoke the gulp task() method, give 
 The next task we could run is the task that will take all our js files and bundle them into one single javascript file.
 
 So we can simply create another task:
-```
+```javascript
 gulp.task('js', function () {
   gulp.src('js/main.js')
     .pipe(gulp.dest('public/js'));
@@ -92,7 +95,7 @@ Try adding code to each of the source files, ```main.js``` and ```main.scss``` a
 
 One last thing. It would be very bothersome if all the time we made a change, we had manually type each command. What if there was a way to watch our files for changes and run our commands and also a way to have all the commands in one major 'default' command. Well gulp allows you to do that. First let's take advantage of gulp's ```watch``` method. It will watch the specified files for changes:
 
-```
+```javascript
 gulp.task('watch', ['js', 'sass'], function () {
   gulp.watch('js/*.js', ['js']);
   gulp.watch('scss/*.scss', ['sass']);
@@ -104,7 +107,7 @@ The we tell it the files to watch using the ```gulp.watch()```  method. We pass 
 
 Lastly, we want a default task to set this up and running. The gulp 'default' task maps all your tasks to a single ```$ gulp``` command. The code is:
 
-```
+```javascript
 gulp.task('default', ['watch']);
 ```
 
